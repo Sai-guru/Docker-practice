@@ -1,0 +1,18 @@
+import express from 'express';
+
+const app = express();
+app.use(express.json());
+const PORT = 4000;
+
+
+app.get('/',(req,res)=> {
+    res.send('Hi from get method default route');
+});
+app.get('/users',(req,res)=> {
+    res.json({name:'guru',age:19});
+});
+
+
+app.listen(PORT,()=>{
+    console.log(`Server is running on port ${PORT}`);
+});
